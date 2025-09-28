@@ -3,128 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ivy Wallet - Simple. Powerful. DeFi for Everyone.</title>
+  <title>IvyDeFi - Simple. DeFi for Everyone.</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0a1128; /* Dark navy */
-      color: #e0e7ff; /* Light lavender */
+      background: #ffffff;
+      color: #2e2e2e;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 3rem 1rem;
+      overflow-x: hidden;
     }
     header {
-      max-width: 600px;
+      max-width: 640px;
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(79, 142, 247, 0.15);
+      background: #f7faff;
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       font-weight: 700;
       color: #4f8ef7; /* sapphire blue */
       margin-bottom: 0.5rem;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
     }
     p.subheadline {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       margin-bottom: 2rem;
-      color: #cbd5e1;
+      color: #526488;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
+      transform: translateY(30px);
     }
-    form {
-      display: flex;
-      justify-content: center;
-      max-width: 400px;
-      margin-bottom: 3rem;
-    }
-    input[type="email"] {
-      flex: 1;
-      padding: 0.8rem 1rem;
-      font-size: 1rem;
-      border-radius: 4px 0 0 4px;
-      border: none;
-      outline: none;
-    }
-    button {
-      padding: 0.8rem 1.4rem;
-      font-size: 1rem;
-      background: #4f8ef7;
-      border: none;
-      border-radius: 0 4px 4px 0;
-      color: white;
+    a.follow-link {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 0 12px #4f8ef7;
-      transition: background-color 0.3s ease;
+      color: #ffffff;
+      background: #4f8ef7;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(79,142,247,0.3);
+      text-decoration: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.7s;
+      opacity: 0;
+      transform: translateY(30px);
     }
-    button:hover {
+    a.follow-link:hover {
       background-color: #366ccc;
-      box-shadow: 0 0 20px #366ccc;
+      box-shadow: 0 12px 30px rgba(54,108,204,0.5);
     }
     section.features {
-      max-width: 800px;
+      max-width: 900px;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
       gap: 2rem;
-      margin-bottom: 3rem;
+      margin-top: 2rem;
+      padding: 0 1rem;
     }
     section.features div.feature {
-      background: #142850;
-      padding: 2rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(79,142,247,0.25);
+      background: #f7faff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(79,142,247,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    section.features div.feature:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(79,142,247,0.3);
     }
     section.features div.feature h3 {
       color: #4f8ef7;
       margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
     section.features div.feature p {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-    }
-    section.screenshots {
-      max-width: 900px;
-      margin-bottom: 3rem;
-    }
-    section.screenshots img {
-      width: 250px;
-      margin: 0.5rem;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(79,142,247,0.3);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    section.screenshots img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(79,142,247,0.5);
+      font-size: 1rem;
+      color: #526488;
+      line-height: 1.4;
     }
     footer {
-      margin-top: auto;
+      margin-top: 4rem;
       font-size: 0.9rem;
-      color: #8892b0;
+      color: #9aaab2;
+      user-select: none;
     }
-    footer a {
-      color: #4f8ef7;
-      text-decoration: none;
-      margin: 0 0.5rem;
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
-      }
-      form {
-        flex-direction: column;
-      }
-      input[type="email"],
-      button {
-        border-radius: 4px;
-      }
-      button {
-        margin-top: 0.5rem;
       }
       section.features {
         grid-template-columns: 1fr;
@@ -137,10 +126,7 @@
   <header>
     <h1>Simple. Powerful. DeFi for Everyone.</h1>
     <p class="subheadline">Manage, earn, swap, and explore Web3 — all in one sleek app.</p>
-    <form action="MAILCHIMP_FORM_ACTION_URL" method="post" target="_blank" novalidate>
-      <input type="email" name="EMAIL" placeholder="Enter your email to join the waitlist" required />
-      <button type="submit">Join Waitlist</button>
-    </form>
+    <a class="follow-link" href="https://x.com/ivydefi_" target="_blank" rel="noopener noreferrer">Follow us on X</a>
   </header>
 
   <section class="features">
@@ -154,23 +140,16 @@
     </div>
     <div class="feature">
       <h3>Swap with Confidence</h3>
-      <p>Swap thousands of tokens instantly with the best rates and automatic fee collection.</p>
+      <p>Swap thousands of tokens instantly with the best rates and seamless UX.</p>
     </div>
     <div class="feature">
       <h3>Explore Web3</h3>
-      <p>Seamlessly browse and interact with decentralized applications.</p>
+      <p>Seamlessly browse and interact with decentralized applications within the app.</p>
     </div>
   </section>
 
-  <section class="screenshots">
-    <img src="./assets/portfolio-screen.png" alt="Portfolio screen" />
-    <img src="./assets/swap-screen.png" alt="Swap screen" />
-    <img src="./assets/earn-screen.png" alt="Earn screen" />
-    <img src="./assets/browser-screen.png" alt="Browser screen" />
-  </section>
-
   <footer>
-    © 2025 IvyDeFi • <a href="/terms.html">Terms of Service</a> • <a href="/privacy.html">Privacy Policy</a> • <a href="mailto:contact@ivydefi.com">Contact</a>
+    © 2025 IvyDeFi
   </footer>
 
 </body>
