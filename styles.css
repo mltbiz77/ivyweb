@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #2e2e2e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 3rem 1rem;
+  overflow-x: hidden;
+}
+
+header {
+  max-width: 640px;
+  background: #f7faff;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.15);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.75rem;
+  color: #4f8ef7;
+  margin: 0 0 0.5rem 0;
+}
+
+.subheadline {
+  font-size: 1.25rem;
+  color: #526488;
+  margin: 0 0 2rem 0;
+}
+
+.followBtn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: white;
+  background: #4f8ef7;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(79, 142, 247, 0.3);
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.followBtn:hover {
+  background-color: #366ccc;
+  box-shadow: 0 12px 30px rgba(54, 108, 204, 0.5);
+}
+
+.features {
+  margin-top: 2rem;
+  max-width: 900px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.feature {
+  background: #f7faff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(79, 142, 247, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(79, 142, 247, 0.3);
+}
+
+.feature h3 {
+  color: #4f8ef7;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #526488;
+  line-height: 1.4;
+}
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #9aaab2;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
